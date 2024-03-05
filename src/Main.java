@@ -46,24 +46,45 @@ public class Main {
 
         for(String x:l1) s1.add(x);
 
-        for(String x:s1) System.out.println(x);
-
+        System.out.print("Hashset1 elements: ");
+        for(String x:s1) {
+            System.out.print(x);
+            System.out.print(", ");
+        }
+        System.out.println();
         Set<String> s2 = new HashSet<String>(l1);
         s2.addAll(l1);
-        for(String x:s2) System.out.println(x);
 
+        System.out.print("Hashset2 elements: ");
+        for(String x:s2) {
+            System.out.print(x);
+            System.out.print(", ");
+        }
+        System.out.println();
         Set<String> t1 = new TreeSet<String>(l1);
         t1.addAll(l1);
 
         Iterator<String> t1Iterator = t1.iterator();
-
+        System.out.print("Treeset elements: ");
         while(t1Iterator.hasNext()) {
-            System.out.println(t1Iterator.next());
+            System.out.print(t1Iterator.next());
+            System.out.print(", ");
         }
+        System.out.println();
+        Queue<String> myQueue = new LinkedList<>(l1);
+
+
+        System.out.print("Queue elements: ");
+
+
+        while (!myQueue.isEmpty()) {
+            System.out.print(myQueue.poll()+", ");
+        }
+        System.out.println();
 
         Map <Integer,String> m1 = buatMap(l1);
 
-
+        System.out.println("Map elements:");
         for (Map.Entry<Integer, String> y :
                 m1.entrySet()) {
 
