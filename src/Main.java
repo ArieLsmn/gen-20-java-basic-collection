@@ -4,9 +4,8 @@ import java.util.*;
 
 public class Main {
 
-    public static List<String> buatList(String[] item){
-        List<String> barang = new ArrayList<String>();
-        barang = Arrays.asList(item);
+    public static ArrayList<String> buatList(String[] item){
+        ArrayList<String> barang = new ArrayList<String>(Arrays.asList(item));
         return barang;
     }
 
@@ -21,7 +20,7 @@ public class Main {
         System.out.println("\n");
     }
 
-    public static void tambahKeList(ArrayList<String> ls, String added){
+    public static void tambahKeList(List<String> ls, String added){
         ls.add(added);
         printList(ls);
     }
@@ -160,9 +159,7 @@ public class Main {
             scan.nextLine();
             System.out.println("Tambah item dengan nama: ");
             String in = scan.nextLine();
-            ArrayList<String> listTest = new ArrayList<String>();
-            listTest.addAll(list1);
-            tambahKeList(listTest,in);
+            tambahKeList(list1,in);
         }
         if(select==4) konversiList(list1);
     }
